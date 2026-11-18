@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula dia 17/11 - JavaScript</title>
+</head>
+<body>
+    <h1>Resultados da Aula 17/11</h1>
+    <pre id="saida" style="font-size: 16px; background: #f4f4f4; padding: 15px;"></pre>
+
+    <script>
+        const saida = document.getElementById("saida");
+        function mostrar(texto) {
+            console.log(texto);
+            saida.textContent += texto + "\n";
+        }
+
+        // ==========================================
+        // EXERCÍCIO 1
+        // ==========================================
+        mostrar("--- EXERCÍCIO 1 ---");
+        mostrar(10 + 19 + 8 * 4); // Esperado: 61
+        mostrar((10 / 2) * 4);   // Esperado: 20
+        mostrar(2 ** 3 + 1);     // Esperado: 9
+        mostrar(17 % 5);         // Esperado: 2
+        mostrar(20 % 4);         // Esperado: 0
+
+        // ==========================================
+        // EXERCÍCIO 2
+        // ==========================================
+        mostrar("\n--- EXERCÍCIO 2 ---");
+        mostrar(90 > 10);            // Esperado: true
+        mostrar(10 === '10');        // Esperado: false
+        mostrar(10 !== 10);          // Esperado: false
+        mostrar('ifpr' === 'IFPR');  // Esperado: false
+        mostrar(5 >= 5 && 3 > 4);    // Esperado: false
+        mostrar(5 >= 5 || 3 > 4);    // Esperado: true
+        mostrar(!(5 >= 5));          // Esperado: false
+
+        // ==========================================
+        // EXERCÍCIO 3
+        // ==========================================
+        mostrar("\n--- EXERCÍCIO 3 ---");
+        [2024, 1900, 2000, 2026].forEach(ano => {
+            let bissexto = (ano % 4 === 0 && ano % 100 !== 0) || (ano % 400 === 0);
+            mostrar(`Ano ${ano} é bissexto? ${bissexto}`);
+        });
+
+        let anoUsuario = Number(prompt("Exercício 3 - Digite um ano (ex: 2024, 1900, 2000, 2026):"));
+        let isBissexto = (anoUsuario % 4 === 0 && anoUsuario % 100 !== 0) || (anoUsuario % 400 === 0);
+        mostrar(`Seu ano (${anoUsuario}) é bissexto? ${isBissexto}`);
+        alert(`O ano ${anoUsuario} é bissexto? ${isBissexto}`);
+
+        // ==========================================
+        // EXERCÍCIO 4
+        // ==========================================
+        mostrar("\n--- EXERCÍCIO 4 ---");
+        let n1 = Number(prompt("Exercício 4 - Digite a 1ª nota:"));
+        let n2 = Number(prompt("Exercício 4 - Digite a 2ª nota:"));
+        let n3 = Number(prompt("Exercício 4 - Digite a 3ª nota:"));
+
+        let media = ((n1 + n2 + n3) / 3).toFixed(1);
+        mostrar(`Notas: ${n1}, ${n2}, ${n3} | Média: ${media}`);
+        alert(`Média final: ${media}`);
+    </script>
+</body>
+</html>
